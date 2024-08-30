@@ -1,13 +1,15 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import geminiRoutes from './routes/geminiRoutes';
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-// app.use(express.json({ limit: '10mb' })); // Para lidar com grandes strings base64
+app.use(express.json());
+app.use('/api/gemini', geminiRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });

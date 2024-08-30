@@ -4,13 +4,13 @@ services:
   postgres:
     image: bitnami/postgresql:latest
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
-      - POSTGRES_USER=shoope
-      - POSTGRES_PASSWORD=shoope
-      - POSTGRES_DB=project
+      - POSTGRES_USER=shopper
+      - POSTGRES_PASSWORD=shopper
+      - POSTGRES_DB=shopper
     volumes:
-      - project_pg_data:/bitnami/postgresql
+      - shopper_pg_data:/bitnami/postgresql
 
 volumes:
-  project_pg_data:
+  shopper_pg_data:
